@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Extractor de Imágenes — de cualquier sitio a un ZIP</title>
+<meta name="description" content="Pega la URL de un sitio web y descarga sus imágenes en un ZIP desde el navegador.">
+<meta name="theme-color" content="#161513">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/svg+xml" sizes="192x192" href="./icons/icon-192.svg">
+<link rel="apple-touch-icon" href="./icons/icon-192.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+</head>
+<body>
+<header class="darkroom"><div class="wrap"><p class="eyebrow">URL <span class="arrow">→</span> REVELADO <span class="arrow">→</span> ZIP</p><h1 class="title">EXTRACTOR<br>DE IMÁGENES</h1><p class="subtitle">Pega la URL de cualquier sitio y saca todas sus imágenes a la luz, listas para descargar.</p><form id="extract-form" class="extract-form" autocomplete="off"><label for="url-input" class="sr-only">URL del sitio web</label><input type="text" id="url-input" name="url" placeholder="ejemplo.com/tienda" inputmode="url" required><button type="submit" id="extract-btn" class="btn-accent"><span class="btn-label">Extraer imágenes</span><span class="btn-spinner" hidden></span></button></form><p id="status-msg" class="status-msg" role="status" aria-live="polite"></p></div></header>
+<main class="paper"><div class="wrap"><div id="empty-state" class="empty-state"><p>Todavía no hay nada revelado.</p><p class="empty-sub">Ingresa una URL arriba para ver aquí sus imágenes.</p></div><div id="results" class="results" hidden><div class="results-bar"><p id="results-count" class="results-count">0 imágenes encontradas</p><div class="results-actions"><button type="button" id="select-all-btn" class="btn-ghost">Seleccionar todo</button><button type="button" id="select-none-btn" class="btn-ghost">Deseleccionar</button></div></div><ul id="gallery" class="gallery"></ul></div></div></main>
+<div id="download-bar" class="download-bar" hidden><div class="wrap download-bar-inner"><p id="download-info" class="download-info">0 seleccionadas</p><button type="button" id="download-btn" class="btn-accent"><span class="btn-label">Descargar ZIP</span><span class="btn-spinner" hidden></span></button></div></div>
+<footer class="site-footer"><p>Funciona directamente en tu navegador · algunos sitios pueden bloquear el acceso por CORS. Usa esta herramienta respetando los términos del sitio que consultes.</p></footer>
+<script src="./script.js"></script>
+</body>
+</html>
